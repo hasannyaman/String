@@ -1,0 +1,30 @@
+import java.util.*;
+public class String1 {
+	public static void main(String[] args) {
+		Scanner console=new Scanner(System.in);
+		System.out.println("Enter your sentence: ");
+		String sentence=console.nextLine();
+		System.out.println("Which word: ");
+		String word=console.next();
+		String x="";
+		int a;
+		int count=0;
+		boolean test=true;
+		String y=""+sentence.charAt(sentence.length()-1);
+		if(!y.equals(" ")) {
+			sentence=sentence+" ";
+		}
+		while(test) {
+			a=sentence.indexOf(" ");
+			x=sentence.substring(0, a);
+			if(x.equals(word)) {
+				count++;
+			}
+			sentence=sentence.substring(a+1);
+			if(sentence.length()==0) {
+				test=false;
+			}
+		}
+		System.out.println(count);
+	}
+}
